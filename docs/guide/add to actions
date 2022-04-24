@@ -1,0 +1,5 @@
+**Note** You can use an alternative collection name by overriding
+the getter `Action.collection`. You can even override the getter
+`Action.prototype.collection` to dynamically decide where to store a document
+based on another property. See [sharding Domains]() for an advanced
+multi-tenant strategy.

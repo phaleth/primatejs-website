@@ -1,0 +1,9 @@
+@font-face {
+  font-family: titillium-web;
+  font-weight: 400;
+  src: url("/css/titillium-web-400.woff2") format("woff2");
+}
+
+:root {
+  --md-text-font: "titillium-web";
+}

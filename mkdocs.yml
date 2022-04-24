@@ -1,0 +1,64 @@
+site_name: Primate
+site_url: https://primatejs.com
+theme:
+  font: false
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.instant
+    - navigation.sections
+    - content.code.annotate
+    - content.tabs.link
+markdown_extensions:
+  - abbr
+  - admonition
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+nav:
+  - Home: 'index.md'
+  - Getting started: 'getting-started.md'
+  - Guide:
+    - 'guide/index.md'
+    - Setup:
+      - Requirements: 'guide/setup/requirements.md'
+      - Installing: 'guide/setup/installing.md'
+      - Layout: 'guide/setup/layout.md'
+      - Configuring: 'guide/setup/configuring.md'
+      - Running: 'guide/setup/running.md'
+    - Data:
+      - Stores: 'guide/data/stores.md'
+      - Domains: 'guide/data/domains.md'
+      - Predicates: 'guide/data/predicates.md'
+    - Application:
+      - Routing: 'guide/application/routing.md'
+      - Contexts: 'guide/application/contexts.md'
+      - Actions: 'guide/application/actions.md'
+      - Views: 'guide/application/views.md'
+      - Attributes: 'guide/application/attributes.md'
+    - Security:
+      - Data: 'guide/security/data.md'
+      - Application: 'guide/security/application.md'
+      - Mitigations: 'guide/security/mitigations.md'
+    - Beyond:
+      - Security: 'guide/follow-up/security.md'
+  - Modules:
+     - 'modules/index.md'
+     - Stores:
+       - MongoDB: 'modules/stores/mongodb.md'
+       - File: 'modules/stores/file.md'
+       - JSON: 'modules/stores/json.md'
+     - Deployment:
+       - esbuild: 'modules/deployment/esbuild.md'
+  - Resources: 'resources.md'
+extra_css:
+  - css/extra.css
+extra:
+  generator: false
+
