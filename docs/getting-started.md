@@ -144,8 +144,8 @@ for all data operations.
 ## Listing posts
 
 To manage posts in our store, we will need a domain. Domains in Primate are
-classes linked to a collection in store. We'll start by creating a simple domain
-that represents posts on our blog.
+classes linked to a collection in a store. We'll start by creating a simple
+domain that represents posts on our blog.
 
 ```js title="domains/Post.js"
 import {Domain} from "primate";

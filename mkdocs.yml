@@ -24,30 +24,6 @@ markdown_extensions:
 nav:
   - Home: 'index.md'
   - Getting started: 'getting-started.md'
-  - Guide:
-    - 'guide/index.md'
-    - Setup:
-      - Requirements: 'guide/setup/requirements.md'
-      - Installing: 'guide/setup/installing.md'
-      - Layout: 'guide/setup/layout.md'
-      - Configuring: 'guide/setup/configuring.md'
-      - Running: 'guide/setup/running.md'
-    - Data:
-      - Stores: 'guide/data/stores.md'
-      - Domains: 'guide/data/domains.md'
-      - Predicates: 'guide/data/predicates.md'
-    - Application:
-      - Routing: 'guide/application/routing.md'
-      - Contexts: 'guide/application/contexts.md'
-      - Actions: 'guide/application/actions.md'
-      - Views: 'guide/application/views.md'
-      - Attributes: 'guide/application/attributes.md'
-    - Security:
-      - Data: 'guide/security/data.md'
-      - Application: 'guide/security/application.md'
-      - Mitigations: 'guide/security/mitigations.md'
-    - Beyond:
-      - Security: 'guide/follow-up/security.md'
   - Modules:
      - 'modules/index.md'
      - Stores:
@@ -56,7 +32,6 @@ nav:
        - JSON: 'modules/stores/json.md'
      - Deployment:
        - esbuild: 'modules/deployment/esbuild.md'
-  - Resources: 'resources.md'
 extra_css:
   - css/extra.css
 extra:
