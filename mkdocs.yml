@@ -1,5 +1,8 @@
 site_name: Primate
 site_url: https://primatejs.com
+repo_name: primatejs/primate
+repo_url: https://github.com/primatejs/primate
+site_description: JavaScript framework with data verification and server-side rendering
 theme:
   font: false
   name: material
