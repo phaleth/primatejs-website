@@ -9,6 +9,7 @@ env:
 
 jobs:
   deploy-website:
+    if: github.repository_owner == 'primatejs'
     runs-on: ubuntu-latest
 
     steps:
