@@ -15,7 +15,7 @@ yay -S mongodb-bin
 ## Installing
 
 ```
-yarn add primate-mongodb-store
+npm install primate-mongodb-store
 ```
 
 ## Using
@@ -30,7 +30,7 @@ export default new MongoDBStore({"name": "app", "path": "mongodb://localhost"});
 
 ## Source
 
-[https://adaptivecloud.dev/primate/primate-mongodb-store]()
+[https://github.com/primatejs/primate-mongodb-store]()
 
 ## License
 

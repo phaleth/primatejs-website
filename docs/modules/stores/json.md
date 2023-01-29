@@ -6,7 +6,7 @@ structured data.
 ## Installing
 
 ```
-yarn add primate-json-store
+npm install primate-json-store
 ```
 
 ## Using
@@ -33,7 +33,7 @@ export default new JSONStore({"name": "app.json", "path": "/tmp"});
 
 ## Source
 
-[https://adaptivecloud.dev/primate/primate-json-store]()
+[https://github.com/primatejs/primate-json-store]()
 
 ## License
 

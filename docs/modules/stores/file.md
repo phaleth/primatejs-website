@@ -1,12 +1,12 @@
 # File
 
-This store module facades file-system operations, allowing you to work with
+This store module facades filesystem operations, allowing you to work with
 binary files.
 
 ## Installing
 
 ```
-yarn add primate-file-store
+npm install primate-file-store
 ```
 
 ## Using
@@ -24,7 +24,7 @@ export default new FileStore({"path": "/tmp/file-store"});
 
 ## Source
 
-[https://adaptivecloud.dev/primate/primate-file-store]()
+[https://github.com/primatejs/primate-file-store]()
 
 ## License
 
