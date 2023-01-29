@@ -6,6 +6,17 @@ site_description: JavaScript framework with data verification and server-side re
 theme:
   font: false
   name: material
+  palette:
+    - media: "(prefers-color-scheme: dark)"
+      scheme: ayu
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
   features:
     - navigation.tabs
     - navigation.indexes

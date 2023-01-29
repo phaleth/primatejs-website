@@ -7,3 +7,51 @@
 :root {
   --md-text-font: "titillium-web";
 }
+
+[data-md-color-scheme="ayu"] {
+  --md-default-fg-color:             hsla(0,   0%,  77%, 1);
+  --md-default-fg-color--light:      hsla(0,   0%,  77%, 0.62);
+  --md-default-fg-color--lighter:    hsla(0,   0%,  77%, 0.32);
+  --md-default-fg-color--lightest:   hsla(0,   0%,  77%, 0.12);
+  --md-default-bg-color:             hsla(210, 25%, 8%,  1);
+  --md-default-bg-color--light:      hsla(210, 25%, 8%,  0.54);
+  --md-default-bg-color--lighter:    hsla(210, 25%, 8%,  0.26);
+  --md-default-bg-color--lightest:   hsla(210, 25%, 8%,  0.07);
+
+  --md-code-fg-color:                hsla(34, 100%, 66%, 1);
+  --md-code-hl-color-darker:         hsla(20, 100%, 60%, 1);
+  --md-code-bg-color:                hsla(212, 21%, 12%, 1);
+
+  --md-code-hl-color:                hsla(34, 100%, 66%, .15);
+  --md-code-hl-number-color:         #ffee99;
+  --md-code-hl-special-color:        #BD63C5;
+
+  --md-code-hl-function-color:       #ffee99;
+
+  --md-code-hl-constant-color:       var(--md-code-fg-color);
+  --md-code-hl-keyword-color:        #D8A0DF;
+  --md-code-hl-string-color:         #b8cc52;
+  --md-code-hl-name-color:           var(--md-code-hl-color-darker);
+  --md-code-hl-operator-color:       var(--md-default-fg-color--light);
+  --md-code-hl-punctuation-color:    var(--md-default-fg-color--light);
+  --md-code-hl-comment-color:        hsl(211, 11%, 41%);
+  --md-code-hl-generic-color:        #e6e1cf;
+  --md-code-hl-variable-color:       var(--md-code-hl-color-darker);
+  --md-code-hl-type-color:           #FFD700;
+  --md-typeset-ins-color:            #91b362;
+  --md-typeset-del-color:            #d96c75;
+
+  --md-typeset-color:                var(--md-default-fg-color);
+
+  --md-typeset-a-color:              var(--md-primary-fg-color);
+
+  --md-typeset-mark-color:           hsla(218, 100%, 63%, 0.3); /* hsla(#{hex2hsl($clr-blue-a200)}, 0.3); */
+}
+
+img[src$="#only-light"] {
+  display: none;
+}
+
+img[src$="#only-dark"] {
+  display: initial;
+}
