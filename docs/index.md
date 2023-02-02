@@ -1,38 +1,25 @@
 ---
-hide:
+-hide:
   - navigation
 ---
 
 # Primate 
 
-Server-client framework with data verification and server-side rendering (via
-HTML, [React][primate-react] or [Vue][primate-vue]).
-
-## Highlights
-
-* Expressive routing, return HTML, JSON, or binary data
-* HTTPS-only, hash-verified scripts, strong CSP
-* Baked in support for sessions with secure cookies
-* Input verification using data domains
-* Many different data store modules: In-Memory (built-in),
-[File][primate-file-store], [JSON][primate-json-store],
-[MongoDB][primate-mongodb-store]
-* Easy modeling of`1:1`, `1:n` and `n:m` relationships
-* Minimally opinionated with sane, overridable defaults
+Primal JavaScript framework.
 
 ## Getting started
 
-Lay out app.
+Lay out app
 
 ```sh
 mkdir -p app/{routes,components,ssl} && cd app
 
 ```
 
-Create a route for `/` in `routes/site.js`.
+Create a route for `/` in `routes/site.js`
 
 ```js
-import {html} from "primate";
+import html from "@primate/html";
 
 export default router => {
   router.get("/", () => html`<site-index date="${new Date()}" />`);
@@ -40,14 +27,14 @@ export default router => {
 
 ```
 
-Create a component in `components/site-index.html`.
+Create a component in `components/site-index.html`
 
 ```html
 Today's date is ${date}.
 
 ```
 
-Generate SSL files.
+Generate SSL files
 
 ```sh
 openssl req -x509 -out ssl/default.crt -keyout ssl/default.key -newkey rsa:2048 -nodes -sha256 -batch
@@ -70,7 +57,7 @@ npx primate
 
 ## Serving content
 
-Create a file in `routes` that exports a default function.
+Create a file in `routes` that exports a default function
 
 ### Plain text
 
@@ -106,14 +93,15 @@ export default router => {
 import {File} from "runtime-compat/filesystem";
 
 export default router => {
-  router.get("/users", () => File.readable("users.json"));
+  // `File` implements `readable`, which is a ReadableStream
+  router.get("/users", () => new File("users.json"));
 };
 
 ```
 
 ### HTML
 
-Create an HTML component in `components/user-index.html`.
+Create an HTML component in `components/user-index.html`
 
 ```html
 <div for="${users}">
@@ -123,10 +111,10 @@ Create an HTML component in `components/user-index.html`.
 
 ```
 
-Serve the component in your route.
+Serve the component in your route
 
 ```js
-import {html} from "primate";
+import html from "@primate/html";
 
 export default router => {
   // the HTML tagged template handler loads a component from the `components`
@@ -144,7 +132,7 @@ export default router => {
 
 ## Routing
 
-Routes map requests to responses. All routes are loaded from `routes`.
+Routes map requests to responses. Routes are loaded from `routes`.
 
 The order in which routes are declared is irrelevant. Redeclaring a route
 (same pathname and same HTTP verb) throws a `RouteError`.
@@ -152,10 +140,10 @@ The order in which routes are declared is irrelevant. Redeclaring a route
 ### Basic GET route
 
 ```js
-import {html} from "primate";
+import html from "@primate/html";
 
 export default router => {
-  // accessing /site/login will serve the contents of 
+  // accessing /site/login will serve the contents of
   // `components/site-login.html` as HTML
   router.get("/site/login", () => html`<site-login />`);
 };
@@ -189,7 +177,7 @@ export default router => {
 export default router => {
   // named groups are mapped to properties of `request.named`
   // accessing /user/view/1234 will serve `1234` as plain text
-  router.get("/user/view/(<id>[0-9])+", ({named}) => named.id);
+  router.get("/user/view/(?<_id>[0-9])+", ({named}) => named._id);
 };
 
 ```
@@ -206,7 +194,7 @@ export default router => {
   router.get("/user/view/_id", request => request.path[2]);
 
   // can be combined with named groups
-  router.alias("_name", "(<name>[a-z])+");
+  router.alias("_name", "(?<name>[a-z])+");
 
   // will return name if matched, 404 otherwise
   router.get("/user/view/_name", request => request.named.name);
@@ -217,13 +205,14 @@ export default router => {
 ### Sharing logic across HTTP verbs
 
 ```js
-import {html, redirect} from "primate";
+import html from "@primate/html";
+import redirect from "@primate/redirect";
 
 export default router => {
   // declare `"edit-user"` as alias of `"/user/edit/([0-9])+"`
   router.alias("edit-user", "/user/edit/([0-9])+");
 
-  // pass user instead of request for all verbs with this route
+  // pass user instead of request to all verbs with this route
   router.map("edit-user", () => ({name: "Donald"}));
 
   // show user edit form
@@ -239,19 +228,17 @@ export default router => {
 
 ## Domains
 
-Domains represent a collection in a store. All domains are loaded from
-`domains`.
-
-A collection is primarily described using the class `fields` property.
+Domains represent a collection in a store, primarily with the class `fields`
+property.
 
 ### Fields
 
 Field types delimit acceptable values for a field.
 
 ```js
-import {Domain} from "primate";
+import {Domain} from "@primate/domains";
 
-// A basic domain that contains two properies
+// A basic domain that contains two string properies
 export default class User extends Domain {
   static fields = {
     // a user's name must be a string
@@ -264,14 +251,14 @@ export default class User extends Domain {
 
 ```
 
-### Short field notation
+### Short notation
 
 Field types may be any constructible JavaScript object, including other
 domains. When using other domains as types, data integrity (on saving) is
 ensured.
 
 ```js
-import {Domain} from "primate";
+import {Domain} from "@primate/domains";
 import House from "./House.js";
 
 export default class User extends Domain {
@@ -293,7 +280,7 @@ Field types may also be specified as an array, to specify additional predicates
 aside from the type.
 
 ```js
-import {Domain} from "primate";
+import {Domain} from "@primate/domains";
 import House from "./House.js";
 
 export default class User extends Domain {
@@ -315,17 +302,13 @@ export default class User extends Domain {
 Stores interface data. Primate comes with volatile in-memory store used as a
 default. Other stores can be imported as modules.
 
-All stores are loaded from `stores`.
+Stores are loaded from `stores`.
+
+### Resources
+
+* Website: https://primatejs.com
+* IRC: Join the `#primate` channel on `irc.libera.chat`.
 
 ## License
 
 MIT
-
-[getting-started]: https://primatejs.com/getting-started
-[source-code]: https://github.com/primatejs/primate
-[issues]: https://github.com/primatejs/primate/issues
-[primate-file-store]: https://npmjs.com/primate-file-store
-[primate-json-store]: https://npmjs.com/primate-json-store
-[primate-mongodb-store]: https://npmjs.com/primate-mongodb-store
-[primate-react]: https://github.com/primatejs/primate-react
-[primate-vue]: https://github.com/primatejs/primate-vue
