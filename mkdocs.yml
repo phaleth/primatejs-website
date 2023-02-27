@@ -6,6 +6,7 @@ site_description: JavaScript framework with data verification and server-side re
 theme:
   font: false
   name: material
+  favicon: favicon.ico
   palette:
     - media: "(prefers-color-scheme: dark)"
       scheme: ayu
