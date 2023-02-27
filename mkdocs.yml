@@ -9,11 +9,15 @@ theme:
   favicon: favicon.ico
   palette:
     - media: "(prefers-color-scheme: dark)"
+      primary: blue
+      accent: light blue
       scheme: ayu
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
     - media: "(prefers-color-scheme: light)"
+      primary: blue
+      accent: light blue
       scheme: default
       toggle:
         icon: material/weather-night
