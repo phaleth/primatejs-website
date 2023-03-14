@@ -42,12 +42,6 @@ markdown_extensions:
       alternate_style: true
 nav:
   - Home: 'index.md'
-  - Modules:
-     - 'modules/index.md'
-     - Stores:
-       - MongoDB: 'modules/stores/mongodb.md'
-       - File: 'modules/stores/file.md'
-       - JSON: 'modules/stores/json.md'
 extra_css:
   - css/extra.css
 extra:
