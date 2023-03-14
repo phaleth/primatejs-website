@@ -325,8 +325,6 @@ export default class User extends Domain {
 
 ```
 
-#### Sessions ([`@primate/sessions`][primate-session])
-
 ## Resources
 
 * Website: https://primatejs.com
