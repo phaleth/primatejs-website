@@ -42,6 +42,7 @@ markdown_extensions:
       alternate_style: true
 nav:
   - Home: 'index.md'
+  - Quick start: 'quick-start/index.md'
 extra_css:
   - css/extra.css
 extra:
