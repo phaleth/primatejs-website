@@ -15,7 +15,7 @@ Create a couple of routes in `routes/hello.js`.
 import htmx from '@primate/htmx';
 
 export default router => {
-  router.get('/'), () => htmx`<index-htmx />`); 
+  router.get('/', () => htmx`<index-htmx />`); 
   router.post("/hello", () => "Hi");
 };
 
