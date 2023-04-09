@@ -9,13 +9,27 @@ An expressive, minimal and extensible framework for JavaScript.
 
 ## Quick start
 
+Generate `primate.config.js` by executing `npx primate@latest create -y`.
+
+Add the Primate HTMX module to `primate.config.js`.
+
+```js
+import htmx from "@primate/htmx"
+
+export default {
+  modules: [htmx()],
+};
+```
+
+<br/>
+
 Create a couple of routes in `routes/hello.js`.
 
 ```js
 import htmx from '@primate/htmx';
 
-export default router => {
-  router.get('/', () => htmx`<index-htmx />`); 
+export default (router, {htmx}) => {
+  router.get('/', () => htmx('index-htmx'));
   router.post("/hello", () => "Hi");
 };
 
@@ -32,11 +46,7 @@ Create a component in `components/index-htmx.html`.
 ```
 <br/>
 
-Generate `package.json` by executing `npm init -y`.
-
-Add `{"type": "module"}` to the `package.json`.
-
-Run `npm i @primate/htmx && npx primate@latest -y`.
+Run `npm i && npm start`.
 <br/><br/>
 
 Visit <http://localhost:6161>.
