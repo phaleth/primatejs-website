@@ -9,7 +9,7 @@ An expressive, minimal and extensible framework for JavaScript.
 
 ## Quick start
 
-Generate `primate.config.js` by executing `npx primate@latest create -y`.
+Generate `package.json` and `primate.config.js` by executing `npx primate@latest create -y`.
 
 Add the Primate HTMX module to `primate.config.js`.
 
@@ -46,7 +46,7 @@ Create a component in `components/index-htmx.html`.
 ```
 <br/>
 
-Run `npm i && npm start`.
+Run `npm i && npm i @primate/htmx && npm start`.
 <br/><br/>
 
 Visit <http://localhost:6161>.
