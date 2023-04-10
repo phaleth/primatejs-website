@@ -20,29 +20,36 @@ export default {
   modules: [htmx()],
 };
 ```
-
 <br/>
 
-Create a couple of routes in `routes/hello.js`.
+Create the index route in `routes/index.js`.
+
+```js
+import {view} from "primate";
+
+export default {
+  get: () => view("button.htmx"),
+};
+```
+<br/>
+
+Create another `/hello` route in `routes/hello.js`.
 
 ```js
 import htmx from '@primate/htmx';
 
-export default (router, {htmx}) => {
-  router.get('/', () => htmx('index-htmx'));
-  router.post("/hello", () => "Hi");
+export default {
+  post: () => "Hi",
 };
-
 ```
 <br/>
 
-Create a component in `components/index-htmx.html`.
+Create a button component in `components/button.htmx`.
 
 ```js
 <button hx-post="/hello" hx-swap="outerHTML">
   Click me
 </button>
-
 ```
 <br/>
 
