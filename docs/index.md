@@ -24,21 +24,6 @@ export default {
 
 Run `npm i && npm start` and visit `localhost:6161` in your browser.
 
-## Table of Contents
-
-- [Serving content](#serving-content)
-  - [Plain text](#plain-text)
-  - [JSON](#json)
-  - [Streams](#streams)
-  - [Response](#response)
-  - [HTML](#html)
-- [Routing](#routing)
-  - [Basic](#basic)
-  - [The request object](#the-request-object)
-  - [Accessing the request body](#accessing-the-request-body)
-  - [Parameterized routes](#parameterized-routes)
-  - [Explicit handlers](#explicit-handlers)
-
 ## Serving content
 
 Create a file in `routes/index.js` to handle the special `/` route.
