@@ -19,9 +19,10 @@ import svelte from '@primate/svelte';
 import esbuild from '@primate/esbuild';
 
 export default {
-  debug: true,
   modules: [
-    svelte({entryPoints: ['Index.svelte']}), htmx(), esbuild()
+    svelte({entryPoints: ['Index.svelte']}),
+    htmx(),
+    esbuild(),
   ],
 };
 ```
@@ -42,7 +43,7 @@ Create another `/hello` route in `routes/hello.js`.
 
 ```js
 export default {
-  post: () => "Hi",
+  post: () => '<div>Hi</div>',
 };
 ```
 <br/>
