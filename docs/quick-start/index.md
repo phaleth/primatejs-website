@@ -5,7 +5,7 @@ hide:
 
 # Primate 
 
-An expressive, minimal and extensible framework for JavaScript.
+Expressive, minimal and extensible framework for JavaScript
 
 ## Quick start
 
@@ -14,7 +14,7 @@ Generate `package.json` and `primate.config.js` by executing `npx primate@latest
 Add the Primate HTMX module to `primate.config.js`.
 
 ```js
-import htmx from "@primate/htmx"
+import htmx from "@primate/htmx";
 
 export default {
   modules: [htmx()],
@@ -36,8 +36,6 @@ export default {
 Create another `/hello` route in `routes/hello.js`.
 
 ```js
-import htmx from '@primate/htmx';
-
 export default {
   post: () => "Hi",
 };
@@ -46,7 +44,7 @@ export default {
 
 Create a button component in `components/button.htmx`.
 
-```js
+```html
 <button hx-post="/hello" hx-swap="outerHTML">
   Click me
 </button>
@@ -66,5 +64,3 @@ Visit <http://localhost:6161>.
 ## License
 
 MIT
-
-[primate-domains]: https://github.com/primatejs/primate-domains
